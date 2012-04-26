@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Backbone.js Web App</title>
+        <link rel="stylesheet" href="css/screen.css?n=1" />
+    </head>
+    <body>
+        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+				  api_key: ibok6emdhs52
+				  authentication: true
+		</script>
+				
+        <script type="IN/Login" data-onAuth="myConnections.loadConnections"></script>
+                
+        <div id="contacts"></div>
+
+        <script id="contactTemplate" type="text/template">
+            <img class="prof_img" src="<%= pictureUrl %>" alt="<%= firstName %>" />
+            <h1><%= firstName %> <%= lastName %></h1>
+            <div><span><%= headline %></span></div>
+        </script>
+        
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/json2.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script src="js/app.js?n=1"></script>
+
+    </body>
+</html>
