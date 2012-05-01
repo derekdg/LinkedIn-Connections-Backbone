@@ -4,28 +4,40 @@ var myConnections = {
 	loadConnections: function() {
 	
 		IN.API.Connections("me")
-			.fields("first-name", "last-name", "headline", "picture-url", "industry", "phone-numbers")
+			.fields("first-name", "last-name", "headline", "picture-url", "industry", "phone-numbers", "location")
 			.result(function(result) {
-				
-				console.log(result);
-				var lnk = [];
 
-				for (var index in result.values) {
-				  profile = result.values[index]
-				  if (!profile.pictureUrl) { profile.pictureUrl = "img/no-photo.png"; } 
-				  
-				var pos = {
-					profileID: profile.id,
-					firstName: profile.firstName,
-					lastName: profile.lastName,
-					pictureUrl:  profile.pictureUrl,
-					headline: profile.headline,
-					industry: profile.industry
-				};
+			var lnk = [];
+			var counter = 0;
 
-				lnk[index ] = pos;
-			  }
+			for (var index in result.values) {
 
+			  profile = result.values[index];
+			  
+				  if (profile.firstName != "private") {
+
+					var fullName = profile.firstName + ' ' + profile.lastName;
+
+					if (!profile.pictureUrl) { profile.pictureUrl = "img/no-photo.png"; } 
+					if (!profile.location.name) { profile.location.name = "N/A"; }
+					if (fullName.length > 30) { fullName = fullName.substring(0,30) + '...'};
+					var pos = {
+						profileID: profile.id,
+						firstName: profile.firstName,
+						lastName: profile.lastName,
+						fullName: fullName,
+						pictureUrl:  profile.pictureUrl,
+						headline: profile.headline,
+						industry: profile.industry,
+						location: profile.location.name
+					};
+	
+					lnk[counter] = pos;
+					counter++;
+				}
+			}
+
+			
 			/////////////////////////////////
 			//define product model
 			/////////////////////////////////

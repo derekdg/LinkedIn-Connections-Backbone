@@ -4,9 +4,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Backbone.js Web App</title>
-        <link rel="stylesheet" href="css/screen.css?n=1" />
+        <link rel="stylesheet" href="css/screen.css?n=122" />
+        <link rel="shortcut icon" href="img/icon_linked.png" />
     </head>
-    <body>
+    <body style="background: #eee">
         <script type="text/javascript" src="http://platform.linkedin.com/in.js">
 				  api_key: ibok6emdhs52
 				  authentication: true
@@ -18,15 +19,16 @@
 
         <script id="contactTemplate" type="text/template">
             <img class="prof_img" src="<%= pictureUrl %>" alt="<%= firstName %>" />
-            <h1><%= firstName %> <%= lastName %></h1>
+            <h1><%= fullName %></h1>
             <div><span><%= headline %></span></div>
+            <div><span class="loc"><%= location %></span></div>
         </script>
         
         <script src="js/jquery-1.7.1.min.js"></script>
         <script src="js/json2.js"></script>
         <script src="js/underscore-min.js"></script>
         <script src="js/backbone-min.js"></script>
-        <script src="js/app.js?n=1"></script>
+        <script src="js/app.js?n=38636"></script>
 
     </body>
 </html>
