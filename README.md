@@ -15,4 +15,4 @@ Technology
 
 - Frameworks: [jQuery 1.7.1](http://jquery.com/) using [Backbone.js](http://documentcloud.github.com/backbone/)
 - LinkedIn Connection Data: Uses [LinkedIn JavaScript API](http://developer.linkedin.com/javascript)
-- Tests: [Jasmine BDD](http://pivotal.github.com/jasmine/) (coming soon)
+- Tests: [Jasmine BDD](https://jasmine.github.io/) (coming soon)
